@@ -52,9 +52,11 @@ h1 img{
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1500px;
+    width: 98%;
     margin: 0 auto;
-    padding: 30px 5px;
+    padding: 30px 0;
+    box-sizing: border-box;
 }
 
 .destaque {
@@ -63,8 +65,6 @@ main {
     display: flex;
     align-items: center;
     min-height: 500px;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
 }
 .conteudo-destaque {
     width: 45%;
@@ -72,7 +72,6 @@ main {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    display: inline-block;
 }
 
 .informacoes {
@@ -92,8 +91,10 @@ main {
     color: #ff0000;
 }
 .imagem-destaque {
-    width: 85%;
-    margin-right: 50px;
+    width: 55%;
+    margin-right: 30px;
+    box-sizing: border-box;
+    min-width: 0;
 }
 .imagem-destaque img {
     width: 100%;
@@ -129,28 +130,84 @@ main {
 
 .sobre-personagens {
     display: flex;
-    gap: 50px;
+    flex-direction: column;
+    gap: 35px;
     margin-top: 40px;
     align-items: flex-start;
     border-top: 2px solid #8b0000;
-    padding-top: 30px;
+    padding-top: 25px;
 
 }
 
 .sobre {
-    width: 45%;
-    padding: 30px 0;
+    flex: 45;
+    min-width: 0;
 }
 
-.personagens {
-    width: 55%;
-    padding: 0;
+.sobre p{
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.9;
+    text-align: justify;
+    text-shadow: 1px 1px 4px black;
+    margin-bottom: 22px;
+    text-indent: 30px;
 }
+.personagens {
+    flex: 55;
+    padding: 0;
+    min-width: 0;
+}
+
+
 
 h2 {
     color: #ff0000;
     font-size: 32px;
     text-shadow: 0 0 8px red;
+}
+
+.cards-personagens {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.card-personagem {
+    background-color: rgba(10, 10, 10, 0.85);
+    border: 1px solid #8b0000;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card-personagem:hover {
+    transform: translateY(-5px);
+    border-color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.card-personagem img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.card-personagem h4 {
+    color: #ff3333;
+    font-size: 20px;
+    margin: 15px 12px 8px;
+}
+
+.card-personagem p {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 12px 18px;
+    text-shadow: none;
 }
 
 p {
@@ -160,11 +217,263 @@ p {
 }
 
 
-table {
-    border-collapse: collapse;
+
+.temporadas {
+    margin: 50px auto;
+    width: 100%;
 }
 
-th, td {
-    border: 1px solid white;
-    padding: 10px;
+.temporadas h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.temporadas table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(10, 10, 10, 0.85);
+    border: 1px solid #8b0000;
+}
+
+.temporadas th,
+.temporadas td {
+    border: 1px solid #8b0000;
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.temporadas th {
+    background-color: #8b0000;
+    color: white;
+    font-size: 18px;
+}
+
+.temporadas tr:hover {
+    background-color: rgba(139, 0, 0, 0.25);
+}
+
+
+.curiosidades {
+    margin: 50px auto;
+    padding: 25px;
+    border: 1px solid #8b0000;
+    border-radius: 10px;
+    background-color: rgba(35, 35, 35, 0.88);
+    box-sizing: border-box;
+}
+
+.curiosidades h2 {
+    color: #ff3333;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.curiosidades h3 {
+    color: #ff5555;
+    font-size: 22px;
+    margin: 25px 0 15px;
+}
+
+.curiosidades li {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.9;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.curiosidades ol,
+.curiosidades ul {
+    padding-left: 30px;
+}
+
+.curiosidades li::marker {
+    color: #ff3333;
+}
+
+
+.listas-curiosidades {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
+    width: 100%;
+}
+
+.lista-curiosidades {
+    min-width: 0;
+}
+
+.lista-curiosidades h3 {
+    margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+    .listas-curiosidades {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+
+.formulario {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 50px 0;
+    background-color: rgba(35, 35, 35, 0.88);
+    border: 1px solid #8b0000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.contato-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+}
+
+.contato-formulario {
+    padding: 30px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.contato-formulario h2 {
+    color: #ff3333;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 25px;
+}
+
+.contato-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contato-formulario label {
+    color: white;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.contato-formulario input:not([type="submit"]),
+.contato-formulario textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: #171717;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.contato-formulario input:focus,
+.contato-formulario textarea:focus {
+    outline: none;
+    border-color: #ff3333;
+}
+
+.contato-formulario textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contato-formulario input[type="submit"] {
+    margin-top: 15px;
+    padding: 14px;
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contato-formulario input[type="submit"]:hover {
+    background-color: #c00000;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.35);
+}
+
+.contato-imagem {
+    border-left: 2px solid #8b0000;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.contato-imagem img {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .contato-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-imagem {
+        border-left: none;
+        border-top: 2px solid #8b0000;
+        height: 280px;
+    }
+}
+
+.rodape {
+    background-color: rgba(10, 10, 10, 0.95);
+    border-top: 2px solid #8b0000;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodape p {
+    color: #cccccc;
+    font-size: 15px;
+    margin: 0 0 15px;
+}
+
+.rodape strong {
+    color: #ff3333;
+}
+
+.rodape a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 18px;
+    border: 1px solid #8b0000;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.rodape a:hover {
+    background-color: #8b0000;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+}
+
+.linha-rodape {
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #8b0000;
+    margin: 22px auto;
+}
+
+.rodape .creditos {
+    color: #777777;
+    font-size: 13px;
+    margin: 0;
 }
